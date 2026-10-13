@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import DefensePipeline from "../components/DefensePipeline.astro";
+import FeaturesBento from "../components/FeaturesBento.astro";
+import CommandExplorer from "../components/CommandExplorer.astro";
+import InteractiveThreatDemo from "../components/InteractiveThreatDemo.astro";
+import RecoveryWorkflow from "../components/RecoveryWorkflow.astro";
+import ComparisonTable from "../components/ComparisonTable.astro";
+import DeployGuide from "../components/DeployGuide.astro";
+import FaqSection from "../components/FaqSection.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Tsubaki — Discord Auto-Moderation & Zero-Day Phishing Defense Bot"
+  description="Compact Discord auto-moderation bot engineered for zero-day phishing interception, decentralized Turso threat synchronization, safe forensics, and an anime AI companion."
+>
+  <Navbar />
+  <main>
+    <Hero />
+    <DefensePipeline />
+    <FeaturesBento />
+    <CommandExplorer />
+    <InteractiveThreatDemo />
+    <RecoveryWorkflow />
+    <ComparisonTable />
+    <DeployGuide />
+    <FaqSection />
+  </main>
+  <Footer />
+</Layout>

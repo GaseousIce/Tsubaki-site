@@ -1,0 +1,147 @@
+---
+import {
+  HeartHandshake,
+  KeyRound,
+  Smartphone,
+  ShieldAlert,
+  LifeBuoy,
+  RefreshCw,
+  CheckCircle,
+} from "lucide-astro";
+
+const recoverySteps = [
+  {
+    step: "1",
+    title: "Instant Session Invalidation",
+    desc: "Guides the victim to immediately reset their password at discord.com/settings/account, kicking off unauthorized attackers.",
+    icon: KeyRound,
+  },
+  {
+    step: "2",
+    title: "Enforce Hardware 2FA",
+    desc: "Encourages setting up TOTP (Google Authenticator / Aegis) to block future password-stuffing breaches.",
+    icon: Smartphone,
+  },
+  {
+    step: "3",
+    title: "Revoke Malicious OAuth Apps",
+    desc: "Walks them through checking Settings > Authorized Apps to revoke fake Discord bots with bot-token permissions.",
+    icon: ShieldAlert,
+  },
+  {
+    step: "4",
+    title: "Regenerate Stolen Token",
+    desc: "Step-by-step instructions to invalidate compromised developer tokens that malware or browser stealers extracted.",
+    icon: RefreshCw,
+  },
+  {
+    step: "5",
+    title: "Official Discord Restoration",
+    desc: "Direct link to Discord Trust & Safety escalation tickets so victims can reclaim their full account privileges.",
+    icon: LifeBuoy,
+  },
+];
+---
+
+<section class="py-24 relative overflow-hidden bg-[#0A0C13]/60 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Left: Story & Context -->
+      <div class="lg:col-span-5 flex flex-col">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider mb-4 w-fit">
+          <HeartHandshake class="w-3.5 h-3.5" />
+          <span>Compassionate Incident Response</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          Don't just ban victims. <br />
+          <span class="text-emerald-400">Help them reclaim their accounts.</span>
+        </h2>
+
+        <p class="mt-4 text-base text-zinc-300 leading-relaxed">
+          When an active community member sends a phishing link, 99% of the time they were
+          compromised by a credential harvester or session stealer.
+        </p>
+        <p class="mt-3 text-sm text-zinc-400 leading-relaxed">
+          Rather than silently banning them into oblivion, Tsubaki isolates the account safely and
+          dispatches an automated, step-by-step recovery guide directly to their DMs.
+        </p>
+
+        <!-- Recovery Stats Pill -->
+        <div class="mt-8 p-4 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
+          <div>
+            <div class="text-xs text-zinc-400 font-mono">Community Trust Retention</div>
+            <div class="text-xl font-bold text-white mt-0.5">85% Account Recovery Rate</div>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+            <CheckCircle class="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Step-by-Step DM Guide Mockup -->
+      <div class="lg:col-span-7">
+        <div class="rounded-2xl bg-[#11131C] border border-white/10 shadow-2xl p-5 sm:p-6 font-discord space-y-4">
+          <!-- DM Header -->
+          <div class="flex items-center justify-between border-b border-white/5 pb-3">
+            <div class="flex items-center gap-2.5">
+              <img
+                src="/favicon.svg"
+                alt="Tsubaki"
+                class="w-8 h-8 rounded-full bg-[#161924] p-0.5 border border-rose-500/30"
+              />
+              <div>
+                <div class="text-sm font-bold text-white flex items-center gap-2">
+                  <span>Tsubaki Direct Message</span>
+                  <span class="bg-indigo-600 text-[10px] text-white px-1.5 py-0.2 rounded font-sans uppercase">
+                    BOT
+                  </span>
+                </div>
+                <div class="text-[11px] text-zinc-400 font-mono">Automated Security Guidance</div>
+              </div>
+            </div>
+            <span class="text-xs text-rose-400 font-mono bg-rose-950/60 px-2 py-0.5 rounded border border-rose-500/30">
+              URGENT NOTICE
+            </span>
+          </div>
+
+          <!-- Embed Details -->
+          <div class="rounded-lg bg-[#181B26] border-l-4 border-l-red-500 border border-white/5 p-4 space-y-3">
+            <div class="font-bold text-white text-sm">
+              🛡️ Account Compromised — Security Recovery Action Required
+            </div>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              Your account was used to send a phishing link (
+              <code class="text-rose-300 font-mono">https://cliscord-nitro.app/gift/claim</code>) in{" "}
+              <strong>Citadel Server</strong>. To protect both you and the server, you were
+              temporarily timed out. Follow these emergency steps immediately:
+            </p>
+
+            <!-- 5 Steps List -->
+            <div class="space-y-2.5 pt-2 border-t border-white/5">
+              {recoverySteps.map((s) => (
+                <div class="flex items-start gap-3 p-2 rounded bg-black/30 border border-white/5">
+                  <div class="w-6 h-6 rounded-md bg-white/5 flex items-center justify-center text-xs font-bold font-mono text-emerald-400 shrink-0 mt-0.5">
+                    {s.step}
+                  </div>
+                  <div class="text-xs">
+                    <div class="font-semibold text-white flex items-center gap-1.5">
+                      <s.icon class="w-3.5 h-3.5 text-zinc-400" />
+                      <span>{s.title}</span>
+                    </div>
+                    <div class="text-[11px] text-zinc-400 mt-0.5">{s.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div class="text-[10px] text-zinc-400 pt-2 font-mono flex items-center justify-between">
+              <span>Sent automatically by Tsubaki | Citadel Server</span>
+              <span class="text-emerald-400">1-Click Pardon Ready in Mod Channel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

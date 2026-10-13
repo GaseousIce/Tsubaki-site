@@ -1,0 +1,187 @@
+---
+import { Sliders, Database, Eye, Clock, Bot } from "lucide-astro";
+---
+
+<section id="features" class="py-24 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs font-mono font-semibold uppercase tracking-wider mb-4">
+        Engineered for Modern Discord Communities
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+        Everything you need to run <br class="hidden sm:inline" />a bulletproof server
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-zinc-300">
+        From granular interactive permission management to intelligent automated purges and
+        community-friendly AI.
+      </p>
+    </div>
+
+    <!-- Bento Grid (3x2 or Asymmetric Grid) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1: Interactive Dashboard (Span 2) -->
+      <div class="md:col-span-2 rounded-2xl bg-[#0F121B] border border-white/10 hover:border-rose-500/30 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="p-3 rounded-xl bg-rose-500/10 text-rose-400 border border-rose-500/20">
+              <Sliders class="w-6 h-6" />
+            </div>
+            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-zinc-400 border border-white/5">
+              /antiphishing settings
+            </span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">
+            Interactive Discord Settings Dashboard
+          </h3>
+          <p class="text-sm text-zinc-300 max-w-xl leading-relaxed">
+            No messy JSON or complicated config files needed in Discord. Manage enforcement actions
+            (<code class="text-rose-300">timeout</code>, <code class="text-rose-300">kick</code>,{" "}
+            <code class="text-rose-300">ban</code>, <code class="text-rose-300">warn</code>), alert
+            channels, bypass roles, and custom user DMs through native modals and components.
+          </p>
+
+          <!-- Interactive UI Preview inside card -->
+          <div class="mt-6 rounded-xl bg-[#080A0F] border border-white/10 p-4 font-discord text-xs space-y-3">
+            <div class="flex items-center justify-between border-b border-white/5 pb-2">
+              <span class="font-bold text-white flex items-center gap-2">
+                🛡️ Anti-Phishing Settings — CyberHub Community
+              </span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-[10px]">
+                🟢 Active
+              </span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-[11px]">
+              <div class="bg-white/5 p-2 rounded">
+                <span class="text-zinc-400 block text-[10px]">Action</span>
+                <span class="text-white font-semibold">Timeout (7d)</span>
+              </div>
+              <div class="bg-white/5 p-2 rounded">
+                <span class="text-zinc-400 block text-[10px]">Alerts</span>
+                <span class="text-rose-300 font-semibold">#mod-security</span>
+              </div>
+              <div class="bg-white/5 p-2 rounded">
+                <span class="text-zinc-400 block text-[10px]">Mod Roles</span>
+                <span class="text-indigo-300 font-semibold">@Senior Mod</span>
+              </div>
+              <div class="bg-white/5 p-2 rounded">
+                <span class="text-zinc-400 block text-[10px]">Bypass Role</span>
+                <span class="text-amber-300 font-semibold">@Bot Master</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center gap-2 text-xs text-rose-400 font-semibold">
+          <span>Configurable live in Discord without bot restarts</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Turso libSQL Cloud Threat Sync (Span 1) -->
+      <div class="rounded-2xl bg-[#0F121B] border border-white/10 hover:border-rose-500/30 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="p-3 rounded-xl bg-sky-500/10 text-sky-400 border border-sky-500/20">
+              <Database class="w-6 h-6" />
+            </div>
+            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-zinc-400 border border-white/5">
+              Turso / libSQL
+            </span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white mb-2">Shared Threat Cloud</h3>
+          <p class="text-sm text-zinc-300 leading-relaxed">
+            Every malicious URL discovered across your servers is indexed into a distributed Turso
+            database. When one community identifies a new scam campaign, all protected guilds gain
+            immediate immunity.
+          </p>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-zinc-400">
+          <span>Global Latency</span>
+          <span class="text-sky-400 font-semibold">&lt; 15ms query</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Non-Destructive Test Sandbox (Span 1) -->
+      <div class="rounded-2xl bg-[#0F121B] border border-white/10 hover:border-rose-500/30 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="p-3 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              <Eye class="w-6 h-6" />
+            </div>
+            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-zinc-400 border border-white/5">
+              /test &lt;message_id&gt;
+            </span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white mb-2">Zero-Harm Forensics Sandbox</h3>
+          <p class="text-sm text-zinc-300 leading-relaxed">
+            Need to evaluate a reported link without issuing a false penalty? The{" "}
+            <code class="text-amber-300">/test</code> command parses message references,
+            reconstructs embeds, and outputs an audit log to your mod room without touching the
+            member.
+          </p>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-zinc-400">
+          <span>Safe Inspection</span>
+          <span class="text-amber-400 font-semibold">100% Non-Punitive</span>
+        </div>
+      </div>
+
+      <!-- Card 4: Automated Scheduled Purge & Clear (Span 1) -->
+      <div class="rounded-2xl bg-[#0F121B] border border-white/10 hover:border-rose-500/30 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="p-3 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+              <Clock class="w-6 h-6" />
+            </div>
+            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-zinc-400 border border-white/5">
+              CLEAR_CHANNEL_ID
+            </span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white mb-2">Daily Auto-Purge at 3 AM</h3>
+          <p class="text-sm text-zinc-300 leading-relaxed">
+            Keep command lobbies, scratchpads, and temporary voice-chat logs crystal clean. Specify
+            a channel ID to trigger an automated purge every night at 3:00 AM UTC, or run fine-tuned
+            filter sweeps with <code class="text-purple-300">/clear</code>.
+          </p>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-zinc-400">
+          <span>Filters</span>
+          <span class="text-purple-400 font-semibold">User / Bots-Only</span>
+        </div>
+      </div>
+
+      <!-- Card 5: Groq Anime AI Companion (Span 1) -->
+      <div class="rounded-2xl bg-[#0F121B] border border-white/10 hover:border-rose-500/30 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="p-3 rounded-xl bg-rose-500/10 text-rose-400 border border-rose-500/20">
+              <Bot class="w-6 h-6" />
+            </div>
+            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-zinc-400 border border-white/5">
+              /ask powered by Groq
+            </span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white mb-2">Playful Anime AI Companion</h3>
+          <p class="text-sm text-zinc-300 leading-relaxed">
+            More than just security rules: Tsubaki chats with members using cheerful Japanglish,
+            tsundere banter, and expressive kaomoji. Equipped with per-user spam rate limits and
+            prompt jailbreak refusal guidelines.
+          </p>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-zinc-400">
+          <span>Engine</span>
+          <span class="text-rose-400 font-semibold">Llama 3 / GPT-OSS on Groq</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,300 @@
+---
+import { ExternalLink, Cloud, Server, Key } from "lucide-astro";
+---
+
+<section id="deploy" class="py-24 relative overflow-hidden bg-[#0A0C13]/70 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs font-mono font-semibold uppercase tracking-wider mb-4">
+        Zero Lock-In Deployment
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+        Deploy in minutes. <br class="hidden sm:inline" />
+        Host anywhere on your terms.
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-zinc-300">
+        Choose between zero-maintenance 1-click cloud hosting on Render or ultra-fast local/VPS
+        execution with uv.
+      </p>
+    </div>
+
+    <!-- Deployment Method Selector -->
+    <div class="max-w-4xl mx-auto">
+      <!-- Deployment Tabs Header -->
+      <div class="flex items-center justify-center gap-2 mb-8">
+        <button
+          type="button"
+          data-deploy="render"
+          class="deploy-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-rose-500/40 bg-rose-600/20 text-rose-200 flex items-center gap-2"
+        >
+          <Cloud class="w-4 h-4" />
+          <span>Render Blueprint (1-Click)</span>
+        </button>
+        <button
+          type="button"
+          data-deploy="uv"
+          class="deploy-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-white/10 bg-[#121520] hover:bg-[#181C2A] text-zinc-300 flex items-center gap-2"
+        >
+          <Server class="w-4 h-4" />
+          <span>Local / VPS with uv</span>
+        </button>
+        <button
+          type="button"
+          data-deploy="env"
+          class="deploy-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-white/10 bg-[#121520] hover:bg-[#181C2A] text-zinc-300 flex items-center gap-2"
+        >
+          <Key class="w-4 h-4" />
+          <span>Environment Variables</span>
+        </button>
+      </div>
+
+      <!-- Tab Content 1: Render -->
+      <div
+        id="deploy-panel-render"
+        class="deploy-panel rounded-2xl bg-[#0D0F17] border border-white/10 p-6 sm:p-8 space-y-6 shadow-2xl"
+      >
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/5 pb-6">
+          <div>
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span>Deploy to Render via Blueprint</span>
+              <span class="text-xs font-mono font-medium text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30">
+                Recommended
+              </span>
+            </h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1">
+              Tsubaki ships with a pre-configured{" "}
+              <code class="text-rose-400 font-mono">render.yaml</code> and a lightweight HTTP{" "}
+              <code class="text-rose-400 font-mono">/health</code> endpoint for zero-downtime uptime
+              monitoring.
+            </p>
+          </div>
+          <a
+            href="https://dashboard.render.com/blueprints"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-white font-semibold text-xs shadow-lg shadow-rose-950/60 transition-all shrink-0"
+          >
+            <span>Open Render Dashboard</span>
+            <ExternalLink class="w-3.5 h-3.5" />
+          </a>
+        </div>
+
+        <!-- Render Steps -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div class="bg-[#121520] p-4 rounded-xl border border-white/5 space-y-2">
+            <div class="font-mono text-rose-400 font-bold">01. FORK OR PUSH</div>
+            <div class="font-semibold text-white">Fork the Repository</div>
+            <div class="text-zinc-400 leading-relaxed">
+              Fork{" "}
+              <a
+                href="https://github.com/GaseousIce/Tsubaki"
+                target="_blank"
+                class="text-rose-300 underline"
+              >
+                GaseousIce/Tsubaki
+              </a>{" "}
+              to your GitHub account.
+            </div>
+          </div>
+          <div class="bg-[#121520] p-4 rounded-xl border border-white/5 space-y-2">
+            <div class="font-mono text-rose-400 font-bold">02. CREATE BLUEPRINT</div>
+            <div class="font-semibold text-white">Link Blueprint in Render</div>
+            <div class="text-zinc-400 leading-relaxed">
+              Select <strong>New +</strong> &rarr; <strong>Blueprint</strong> and connect your
+              forked repo. Render automatically parses{" "}
+              <code class="font-mono text-zinc-300">render.yaml</code>.
+            </div>
+          </div>
+          <div class="bg-[#121520] p-4 rounded-xl border border-white/5 space-y-2">
+            <div class="font-mono text-rose-400 font-bold">03. ADD CREDENTIALS</div>
+            <div class="font-semibold text-white">Fill Environment Keys</div>
+            <div class="text-zinc-400 leading-relaxed">
+              Input <code class="font-mono text-zinc-300">DISCORD_TOKEN</code> and{" "}
+              <code class="font-mono text-zinc-300">TURSO_DATABASE_URL</code>. Deploy completes in
+              under 60 seconds.
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal preview -->
+        <div class="bg-[#090A10] p-4 rounded-xl border border-white/10 font-mono text-xs space-y-1.5 text-zinc-300">
+          <div class="text-zinc-500"># render.yaml blueprint snippet</div>
+          <div>
+            <span class="text-rose-400">services:</span>
+          </div>
+          <div>
+            &nbsp;&nbsp;- <span class="text-amber-300">type:</span> web
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-amber-300">name:</span> tsubaki
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-amber-300">env:</span> python
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-amber-300">buildCommand:</span> pip install uv
+            &amp;&amp; uv sync
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-amber-300">startCommand:</span> uv run python
+            src/main.py
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-amber-300">healthCheckPath:</span> /health
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content 2: uv (Hidden by default) -->
+      <div
+        id="deploy-panel-uv"
+        class="deploy-panel hidden rounded-2xl bg-[#0D0F17] border border-white/10 p-6 sm:p-8 space-y-6 shadow-2xl"
+      >
+        <div class="border-b border-white/5 pb-6">
+          <h3 class="text-xl font-bold text-white">Run Locally or on a VPS with uv</h3>
+          <p class="text-xs sm:text-sm text-zinc-400 mt-1">
+            Using Astral's blazingly fast Python package manager{" "}
+            <code class="text-rose-400 font-mono">uv</code> for instant lockfile resolution and zero
+            environment friction.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Step 1 -->
+          <div>
+            <div class="text-xs font-mono text-zinc-400 mb-1.5 font-semibold">
+              1. Clone the repository
+            </div>
+            <pre class="bg-[#090A10] p-3 rounded-xl border border-white/5 font-mono text-xs text-rose-300 overflow-x-auto">git clone https://github.com/GaseousIce/Tsubaki.git &amp;&amp; cd Tsubaki</pre>
+          </div>
+
+          <!-- Step 2 -->
+          <div>
+            <div class="text-xs font-mono text-zinc-400 mb-1.5 font-semibold">
+              2. Initialize environment file
+            </div>
+            <pre class="bg-[#090A10] p-3 rounded-xl border border-white/5 font-mono text-xs text-rose-300 overflow-x-auto">cp .env.example .env</pre>
+          </div>
+
+          <!-- Step 3 -->
+          <div>
+            <div class="text-xs font-mono text-zinc-400 mb-1.5 font-semibold">
+              3. Launch Tsubaki (dependencies auto-synced)
+            </div>
+            <pre class="bg-[#090A10] p-3 rounded-xl border border-white/5 font-mono text-xs text-emerald-400 overflow-x-auto">uv run python src/main.py</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content 3: Environment Variables (Hidden by default) -->
+      <div
+        id="deploy-panel-env"
+        class="deploy-panel hidden rounded-2xl bg-[#0D0F17] border border-white/10 p-6 sm:p-8 space-y-6 shadow-2xl"
+      >
+        <div class="border-b border-white/5 pb-6">
+          <h3 class="text-xl font-bold text-white">Required & Optional Configuration</h3>
+          <p class="text-xs sm:text-sm text-zinc-400 mt-1">
+            Store these secrets in your <code class="text-rose-400 font-mono">.env</code> file or
+            cloud secrets manager.
+          </p>
+        </div>
+
+        <div class="space-y-3 font-mono text-xs">
+          <!-- Item 1 -->
+          <div class="p-3.5 rounded-xl bg-[#121520] border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="text-rose-400 font-bold">DISCORD_TOKEN</span>
+              <span class="text-red-400 text-[10px] ml-2 font-sans font-semibold uppercase bg-red-950/60 px-2 py-0.5 rounded border border-red-500/20">
+                Required
+              </span>
+              <div class="text-[11px] text-zinc-400 mt-0.5 font-sans">
+                Discord Bot Token with Server Members & Message Content intents.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="p-3.5 rounded-xl bg-[#121520] border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="text-rose-400 font-bold">TURSO_DATABASE_URL</span>
+              <span class="text-red-400 text-[10px] ml-2 font-sans font-semibold uppercase bg-red-950/60 px-2 py-0.5 rounded border border-red-500/20">
+                Required
+              </span>
+              <div class="text-[11px] text-zinc-400 mt-0.5 font-sans">
+                Turso/libSQL endpoint e.g.,{" "}
+                <code class="text-zinc-300">libsql://your-db.turso.io</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="p-3.5 rounded-xl bg-[#121520] border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="text-rose-400 font-bold">TURSO_AUTH_TOKEN</span>
+              <span class="text-red-400 text-[10px] ml-2 font-sans font-semibold uppercase bg-red-950/60 px-2 py-0.5 rounded border border-red-500/20">
+                Required
+              </span>
+              <div class="text-[11px] text-zinc-400 mt-0.5 font-sans">
+                Authentication token generated with{" "}
+                <code class="text-zinc-300">turso db tokens create</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="p-3.5 rounded-xl bg-[#121520] border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="text-amber-400 font-bold">GROQ_API_KEY</span>
+              <span class="text-amber-400 text-[10px] ml-2 font-sans font-semibold uppercase bg-amber-950/60 px-2 py-0.5 rounded border border-amber-500/20">
+                Optional
+              </span>
+              <div class="text-[11px] text-zinc-400 mt-0.5 font-sans">
+                Enables the playful anime AI assistant command{" "}
+                <code class="text-zinc-300">/ask</code>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="p-3.5 rounded-xl bg-[#121520] border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="text-zinc-300 font-bold">CLEAR_CHANNEL_ID</span>
+              <span class="text-zinc-400 text-[10px] ml-2 font-sans font-semibold uppercase bg-white/5 px-2 py-0.5 rounded border border-white/5">
+                Optional
+              </span>
+              <div class="text-[11px] text-zinc-400 mt-0.5 font-sans">
+                Channel ID to automatically purge every night at 3:00 AM UTC.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const deployTabs = document.querySelectorAll(".deploy-tab");
+  const deployPanels = document.querySelectorAll(".deploy-panel");
+
+  deployTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = tab.getAttribute("data-deploy");
+      if (!target) return;
+
+      // Update tabs
+      deployTabs.forEach((t) => {
+        t.classList.remove("active", "border-rose-500/40", "bg-rose-600/20", "text-rose-200");
+        t.classList.add("border-white/10", "bg-[#121520]", "text-zinc-300");
+      });
+      tab.classList.add("active", "border-rose-500/40", "bg-rose-600/20", "text-rose-200");
+      tab.classList.remove("border-white/10", "bg-[#121520]", "text-zinc-300");
+
+      // Update panels
+      deployPanels.forEach((p) => p.classList.add("hidden"));
+      const activePanel = document.getElementById(`deploy-panel-${target}`);
+      if (activePanel) activePanel.classList.remove("hidden");
+    });
+  });
+</script>

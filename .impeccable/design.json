@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T15:36:00Z",
+  "title": "Design System: Tsubaki",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Soft Camellia Blossom",
+        "canonical": "#f48c9f",
+        "tonalRamp": ["#4c0519", "#881337", "#be123c", "#e11d48", "#f48c9f", "#fda4af", "#fecdd3", "#fff1f2"]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Camellia Hover Blush",
+        "canonical": "#eb7389",
+        "tonalRamp": ["#4c0519", "#881337", "#be123c", "#eb7389", "#f48c9f", "#fda4af", "#fecdd3", "#fff1f2"]
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Nostalgic Sky Blue",
+        "canonical": "#93b5e1",
+        "tonalRamp": ["#1e293b", "#334155", "#475569", "#64748b", "#93b5e1", "#bfdbfe", "#dbeafe", "#f0f7ff"]
+      },
+      "tertiary": {
+        "role": "tertiary",
+        "displayName": "Warm Piano Honey",
+        "canonical": "#f6cf7d",
+        "tonalRamp": ["#451a03", "#78350f", "#b45309", "#d97706", "#f6cf7d", "#fde68a", "#fef3c7", "#fffbeb"]
+      },
+      "neutral-bg": {
+        "role": "neutral",
+        "displayName": "Paper Canvas",
+        "canonical": "#fbf8f3",
+        "tonalRamp": ["#2b2f38", "#454b57", "#6a7180", "#9da3b0", "#cfcac0", "#e7e2d8", "#f4f0ea", "#fbf8f3"]
+      },
+      "neutral-surface": {
+        "role": "neutral",
+        "displayName": "Pure Soft Surface",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#333740", "#5c6370", "#878f9e", "#b6bcc7", "#d8dce2", "#edf0f4", "#f8f9fb", "#ffffff"]
+      },
+      "neutral-text": {
+        "role": "neutral",
+        "displayName": "Gentle Ink Charcoal",
+        "canonical": "#2b2f38",
+        "tonalRamp": ["#14161b", "#20232a", "#2b2f38", "#4a5160", "#6d768a", "#959eb4", "#c5ccde", "#eef1f8"]
+      },
+      "neutral-border": {
+        "role": "neutral",
+        "displayName": "Faint Paper Fold",
+        "canonical": "#e7e2d8",
+        "tonalRamp": ["#2d2b27", "#545049", "#7f7a70", "#aca69a", "#cdc7bb", "#e7e2d8", "#f3efe7", "#faf7f2"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero narrative declarations and lyrical headlines."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles and major feature showcases."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card titles and component headers."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Body copy, feature descriptions, and guides."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Command names, technical metrics, and pill badges."
+      }
+    },
+    "shadows": [
+      {
+        "name": "paper-ambient",
+        "value": "0 4px 20px rgba(244, 140, 159, 0.12)",
+        "purpose": "Subtle warm ambient watercolor haze on hover."
+      },
+      {
+        "name": "paper-flat",
+        "value": "none",
+        "purpose": "Default rest state: surfaces rest flush with hairline borders."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-gentle",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "Gentle, organic easing curve for hover transitions."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary call-to-action button with soft camellia blossom tone.",
+      "html": "<button class=\"ds-btn-primary\"><svg class=\"ds-btn-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2L2 7l10 5 10-5-10-5z\"/><path d=\"M2 17l10 5 10-5\"/><path d=\"M2 12l10 5 10-5\"/></svg>Deploy Guardian</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #f48c9f; color: #ffffff; padding: 12px 24px; border-radius: 12px; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 14px; font-weight: 600; border: 1px solid #eb7389; cursor: pointer; text-decoration: none; transition: background 0.2s cubic-bezier(0.25, 1, 0.5, 1), transform 0.2s; } .ds-btn-primary:hover { background: #eb7389; transform: translateY(-1px); } .ds-btn-icon { width: 16px; height: 16px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Clean paper-surface button for secondary actions and documentation links.",
+      "html": "<button class=\"ds-btn-secondary\"><svg class=\"ds-btn-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22\"/></svg>View on GitHub</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #ffffff; color: #2b2f38; padding: 12px 24px; border-radius: 12px; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 14px; font-weight: 600; border: 1px solid #e7e2d8; cursor: pointer; text-decoration: none; transition: background 0.2s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.2s, transform 0.2s; } .ds-btn-secondary:hover { background: #f6f2ea; border-color: #d5cfc3; transform: translateY(-1px); } .ds-btn-icon { width: 16px; height: 16px; color: #7c8290; }"
+    },
+    {
+      "name": "Badge Pill",
+      "kind": "chip",
+      "refersTo": "badge-pill",
+      "description": "Soft pastel wash pill badge for statuses and section eyebrows.",
+      "html": "<span class=\"ds-badge-pill\"><span class=\"ds-badge-dot\"></span>Pre-Spread Shield</span>",
+      "css": ".ds-badge-pill { display: inline-flex; align-items: center; gap: 6px; background: #fdf0f2; color: #f48c9f; border: 1px solid #fecdd3; padding: 4px 12px; border-radius: 9999px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; } .ds-badge-dot { width: 6px; height: 6px; border-radius: 9999px; background: #f48c9f; }"
+    },
+    {
+      "name": "Card Surface",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Clean paper card with hairline border and gentle watercolor hover blush.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-tag\">LibSQL Sync</div><h4 class=\"ds-card-title\">Decentralized Community Cloud</h4><p class=\"ds-card-body\">Zero-day scam links neutralized on one server synchronize across all connected community instances.</p></div>",
+      "css": ".ds-card { background: #ffffff; border: 1px solid #e7e2d8; border-radius: 18px; padding: 24px; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; transition: border-color 0.2s, box-shadow 0.2s; } .ds-card:hover { border-color: #f48c9f; box-shadow: 0 4px 20px rgba(244, 140, 159, 0.12); } .ds-card-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; color: #93b5e1; background: #eef4fb; padding: 2px 8px; border-radius: 6px; margin-bottom: 12px; } .ds-card-title { margin: 0 0 8px 0; font-size: 18px; font-weight: 600; color: #2b2f38; } .ds-card-body { margin: 0; font-size: 14px; line-height: 1.6; color: #7c8290; }"
+    },
+    {
+      "name": "Paper Inset Input",
+      "kind": "input",
+      "refersTo": "input-inset",
+      "description": "Tactile inset input field with soft focus glow.",
+      "html": "<input type=\"text\" class=\"ds-input\" placeholder=\"Paste suspicious link to test detection...\" value=\"https://cliscord-nitro.app/gift\" />",
+      "css": ".ds-input { width: 100%; box-sizing: border-box; background: #f6f2ea; border: 1px solid #e7e2d8; border-radius: 12px; padding: 12px 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #2b2f38; outline: none; transition: border-color 0.2s, box-shadow 0.2s; } .ds-input:focus { border-color: #f48c9f; box-shadow: 0 0 0 3px rgba(244, 140, 159, 0.2); } .ds-input::placeholder { color: #7c8290; }"
+    },
+    {
+      "name": "Archival Discord Alert",
+      "kind": "custom",
+      "refersTo": "card-forensic-alert",
+      "description": "Discord forensic alert reimagined as a gentle archival index card with pastel rose ribbon.",
+      "html": "<div class=\"ds-alert-card\"><div class=\"ds-alert-header\"><span class=\"ds-alert-title\">🛡️ Threat Quarantined</span><span class=\"ds-alert-speed\">38ms latency</span></div><div class=\"ds-alert-row\"><span class=\"ds-alert-label\">Member:</span><span class=\"ds-alert-val\">@AlexVault (Compromised)</span></div><div class=\"ds-alert-code\"><code>https://cliscord-nitro.app/gift/claim</code></div><div class=\"ds-alert-footer\">Automated recovery guidance dispatched via DM.</div></div>",
+      "css": ".ds-alert-card { background: #ffffff; border: 1px solid #e7e2d8; border-left: 4px solid #f48c9f; border-radius: 12px; padding: 16px; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; } .ds-alert-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; } .ds-alert-title { font-size: 14px; font-weight: 700; color: #2b2f38; } .ds-alert-speed { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #93b5e1; background: #eef4fb; padding: 2px 6px; border-radius: 4px; } .ds-alert-row { font-size: 12px; margin-bottom: 8px; color: #7c8290; } .ds-alert-val { color: #2b2f38; font-weight: 600; margin-left: 4px; } .ds-alert-code { background: #f6f2ea; border: 1px solid #e7e2d8; border-radius: 6px; padding: 6px 10px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #eb7389; word-break: break-all; margin-bottom: 8px; } .ds-alert-footer { font-size: 11px; color: #7c8290; font-style: italic; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Nostalgic Piano Garden (MIMI Soundscape)",
+    "overview": "Tsubaki's visual identity draws inspiration from the gentle, melancholic yet comforting musical universe of vocaloid producer MIMI. Rather than framing server security as a high-alert military war-room or an aggressive neon cyberpunk firewall, Tsubaki embodies a quiet, caring sanctuary. Security is reimagined as an unobtrusive guardian watching over a sunlit afternoon tea room—alert, precise, but radiating quiet reassurance.\n\nThe visual atmosphere trades harsh obsidian darkness and high-contrast alert strobes for tactile paper-soft minimalism, watercolor-tinted pastels, and generous negative space. Every surface evokes the stillness of sheet music laid beside an open window: cream-toned canvas, delicate hairline borders, soft ink typography, and organic camellia blossom petals that punctuate key interactive moments with warmth.",
+    "keyCharacteristics": [
+      "Paper Canvas Warmth: Uncoated, tactile ivory background (#fbf8f3) replacing cold terminal black.",
+      "Watercolor Pastel Accents: Muted camellia rose (#f48c9f), sky periwinkle (#93b5e1), and warm piano honey (#f6cf7d).",
+      "Quiet Minimal Stacking: Flat tonal layering and 1px hairline dividers in place of heavy drop shadows or harsh neon glows.",
+      "Gentle Anime Soul: Softly rounded geometry, Japanese kaomoji touches, and comforting micro-interactions that feel like handwritten notes."
+    ],
+    "rules": [
+      {
+        "name": "The Watercolor Restraint Rule",
+        "body": "Pastel accents are applied as light washes and deliberate punctuation, never exceeding 15% of the viewport. The paper canvas must always dominate so the reading experience remains peaceful.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Harmony Rule",
+        "body": "Never use pure digital black (#000000). Deep charcoal ink (#2b2f38) preserves the printed illustrated feel and prevents optical harshness.",
+        "section": "colors"
+      },
+      {
+        "name": "The Melodic Rhythm Rule",
+        "body": "Headlines prioritize soft letter-spacing, generous line heights, and comfortable reading pacing. Never squeeze or uppercase entire sentences; let the type breathe like musical phrasing.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper Margin Rule",
+        "body": "Content must never touch card borders or screen edges. Generous internal padding (24px to 32px on cards, 64px+ between sections) preserves the serene, unhurried reading atmosphere.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat-by-Paper Rule",
+        "body": "Surfaces rest flush on the page canvas. Shadows never exceed 20px blur or 15% opacity, and black directional drop shadows are strictly forbidden.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the warm paper canvas (#fbf8f3) as the global foundation for page layouts.",
+      "Do frame security and auto-moderation as a serene, caring guardian protecting community peace.",
+      "Do pair pastel washes (#fdf0f2, #eef4fb, #fdf8ee) with rich ink charcoal (#2b2f38) to ensure effortless readability.",
+      "Do keep cards and elevation flat, separating surfaces with hairline borders (#e7e2d8) and subtle background stepping.",
+      "Do use generous white space and comfortable line heights to let visitors breathe."
+    ],
+    "donts": [
+      "Don't use pure digital black (#000000) or heavy dark obsidian backgrounds.",
+      "Don't use neon laser glow effects, pulsing high-intensity drop shadows, or aggressive cyberpunk grids.",
+      "Don't use harsh saturated red warning banners; use gentle rose pastel washes (#fdf0f2 with #f48c9f borders) for security alerts.",
+      "Don't crowd components together; claustrophobic density breaks the MIMI-inspired calm pacing."
+    ]
+  }
+}

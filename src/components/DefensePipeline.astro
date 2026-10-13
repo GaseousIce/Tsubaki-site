@@ -1,0 +1,191 @@
+---
+import {
+  Search,
+  ShieldAlert,
+  Database,
+  Split,
+  Zap,
+  Mail,
+  LayoutGrid,
+  ShieldCheck,
+  ArrowRight,
+} from "lucide-astro";
+
+const steps = [
+  {
+    step: "01",
+    title: "Deep URL Extraction",
+    subtitle: "No hidden links in embeds or attachments",
+    desc: "Scans raw message text, embedded rich titles, descriptions, custom fields, footers, and image attachment descriptions before Discord renders previews.",
+    icon: Search,
+    tag: "Deep Parsing",
+    accent: "from-rose-500/20 to-rose-600/5",
+    border: "border-rose-500/30",
+  },
+  {
+    step: "02",
+    title: "Official Discord Feeds",
+    subtitle: "Up-to-the-minute malicious lists",
+    desc: "Continuously synchronized with Discord's verified phishing registries and suspicious top-level domains with exponential backoff fault tolerance.",
+    icon: ShieldAlert,
+    tag: "Official Threat Feed",
+    accent: "from-amber-500/20 to-amber-600/5",
+    border: "border-amber-500/30",
+  },
+  {
+    step: "03",
+    title: "Global Turso libSQL Blocklist",
+    subtitle: "Decentralized collective intelligence",
+    desc: "Every malicious domain confirmed by any Tsubaki instance is instantly blacklisted across every server connected to the Turso database.",
+    icon: Database,
+    tag: "Decentralized Cloud",
+    accent: "from-sky-500/20 to-sky-600/5",
+    border: "border-sky-500/30",
+  },
+  {
+    step: "04",
+    title: "Typosquat & Homoglyph Engine",
+    subtitle: "Catches deceptive lookalike domains",
+    desc: "Heuristic pattern matching detects deceptive domain variations (e.g., `discorcl-nitro`, `steam-comnunity`, fake TLDs) before they reach public blocklists.",
+    icon: Split,
+    tag: "Heuristics",
+    accent: "from-purple-500/20 to-purple-600/5",
+    border: "border-purple-500/30",
+  },
+  {
+    step: "05",
+    title: "Multi-Channel Raid Limiter",
+    subtitle: "Stops automated token-grabber bursts",
+    desc: "Detects rapid link spreading across 3+ unique channels within 10 seconds, as well as duplicate screenshot/image floods across your community.",
+    icon: Zap,
+    tag: "Raid Prevention",
+    accent: "from-rose-500/20 to-rose-600/5",
+    border: "border-rose-500/30",
+  },
+  {
+    step: "06",
+    title: "Victim Rescue & Auto-Punishment",
+    subtitle: "Automated isolation + token reset guide",
+    desc: "Message is deleted, member is automatically placed in timeout (or kicked/banned), and sent a compassionate 5-step recovery DM to reclaim hijacked credentials.",
+    icon: Mail,
+    tag: "Account Recovery",
+    accent: "from-emerald-500/20 to-emerald-600/5",
+    border: "border-emerald-500/30",
+  },
+  {
+    step: "07",
+    title: "Forensic Quarantined Alert",
+    subtitle: "Safe previews with zero misclick danger",
+    desc: "Alerts mod channels with unclickable code blocks, reconstructed embed previews, and a 4-image grid gallery that references CDN URLs without downloading payloads.",
+    icon: LayoutGrid,
+    tag: "Safe Forensics",
+    accent: "from-rose-500/20 to-rose-600/5",
+    border: "border-rose-500/30",
+  },
+  {
+    step: "08",
+    title: "Role Hierarchy Protected",
+    subtitle: "1-click actions with safety locks",
+    desc: "Interactive in-embed controls (Pardon User, Ban User, Allow URL) strictly enforce Discord role hierarchies so lower moderators cannot override administrators.",
+    icon: ShieldCheck,
+    tag: "Hierarchy Enforced",
+    accent: "from-amber-500/20 to-amber-600/5",
+    border: "border-amber-500/30",
+  },
+];
+---
+
+<section
+  id="defense-pipeline"
+  class="py-24 relative overflow-hidden bg-[#090B10]/70 border-y border-white/5"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs font-mono font-semibold uppercase tracking-wider mb-4">
+        8-Layer Defense Architecture
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+        How Tsubaki neutralizes threats <br class="hidden sm:inline" />
+        in under 50 milliseconds
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-zinc-300">
+        Engineered specifically to counter token-stealer webhooks, deceptive Steam/Discord Nitro
+        giveaways, and coordinated multi-channel raid bots.
+      </p>
+    </div>
+
+    <!-- Pipeline Step Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {steps.map((item) => (
+        <div class="group relative rounded-2xl bg-[#0F121B] border border-white/10 hover:border-rose-500/40 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-rose-950/30">
+          <!-- Step Glow Accent -->
+          <div
+            class={`absolute inset-0 bg-gradient-to-br ${item.accent} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}
+          ></div>
+
+          <div class="relative z-10">
+            <!-- Header with Number and Icon -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-xs font-bold text-rose-400 bg-rose-950/60 px-2.5 py-1 rounded-md border border-rose-500/25">
+                STEP {item.step}
+              </span>
+              <div class="p-2.5 rounded-xl bg-white/5 text-zinc-300 group-hover:text-rose-400 group-hover:bg-rose-500/10 transition-colors">
+                <item.icon class="w-5 h-5" />
+              </div>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <h3 class="text-lg font-bold text-white group-hover:text-rose-200 transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-xs font-medium text-rose-400/90 font-mono mt-0.5 mb-3">
+              {item.subtitle}
+            </p>
+
+            <!-- Detailed description -->
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">{item.desc}</p>
+          </div>
+
+          <!-- Bottom Tag -->
+          <div class="relative z-10 mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-zinc-400">
+            <span class="text-zinc-400 group-hover:text-zinc-300 transition-colors">
+              {item.tag}
+            </span>
+            <span class="text-rose-500 opacity-0 group-hover:opacity-100 transition-opacity font-bold">
+              Active &bull;
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Architecture Highlight Card -->
+    <div class="mt-12 rounded-2xl bg-gradient-to-r from-[#121520] via-[#171B28] to-[#121520] border border-white/10 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-rose-600/20 border border-rose-500/30 flex items-center justify-center text-rose-400 shrink-0">
+          <ShieldCheck class="w-6 h-6" />
+        </div>
+        <div>
+          <h4 class="text-base sm:text-lg font-bold text-white">
+            Zero Download Policy for Malicious Media
+          </h4>
+          <p class="text-xs sm:text-sm text-zinc-400 mt-1 max-w-2xl">
+            Tsubaki never downloads suspicious binaries or payload files to your server disk. Images
+            are rendered in Discord embeds using proxied attachment URLs, keeping your hosting
+            environment 100% immune from malicious executable infection.
+          </p>
+        </div>
+      </div>
+      <div class="shrink-0 flex items-center gap-3">
+        <a
+          href="#interactive-demo"
+          class="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-semibold rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-colors"
+        >
+          <span>Try Test Sandbox</span>
+          <ArrowRight class="w-3.5 h-3.5" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

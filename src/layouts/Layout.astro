@@ -1,0 +1,63 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Tsubaki — Discord Auto-Moderation & Phishing Defense Bot",
+  description = "Protect your Discord server with pre-spread zero-day phishing interception, Turso global threat synchronization, safe forensics previews, and an expressive anime AI companion.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#E11D48" />
+
+    <!-- Open Graph / Discord Embed -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/og-card.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#07080C] text-[#E2E8F0] font-sans antialiased selection:bg-[#E11D48] selection:text-white min-h-screen relative overflow-x-hidden">
+    <!-- Ambient Backdrop Gradients -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <!-- Top Crimson Ambient Glow -->
+      <div class="absolute -top-[25%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-[#E11D48]/15 via-[#881337]/5 to-transparent blur-[120px] rounded-full"></div>
+      <!-- Secondary Side Glow -->
+      <div class="absolute top-[40%] -left-[200px] w-[500px] h-[500px] bg-[#E11D48]/8 blur-[140px] rounded-full"></div>
+      <div class="absolute top-[65%] -right-[200px] w-[600px] h-[600px] bg-[#9F1239]/8 blur-[150px] rounded-full"></div>
+      <!-- Subtle Grid Pattern Overlay -->
+      <div class="absolute inset-0 bg-grid-subtle opacity-60"></div>
+    </div>
+
+    <!-- Main Content Shell -->
+    <div class="relative z-10 flex flex-col min-h-screen">
+      <slot />
+    </div>
+  </body>
+</html>

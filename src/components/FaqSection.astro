@@ -1,0 +1,63 @@
+---
+import { ChevronDown } from "lucide-astro";
+
+const faqs = [
+  {
+    q: "What Discord Intents and Permissions does Tsubaki require?",
+    a: "In the Discord Developer Portal, enable <strong>Server Members Intent</strong> and <strong>Message Content Intent</strong>. Within your server, grant Tsubaki <code>Manage Messages</code>, <code>Moderate Members</code> (to issue timeouts), <code>Kick Members</code>, <code>Ban Members</code>, <code>Send Messages</code>, and <code>Embed Links</code>.",
+  },
+  {
+    q: "How does the Turso / libSQL decentralized blocklist work?",
+    a: "Tsubaki uses Turso (managed libSQL) as its distributed datastore. When a zero-day phishing link is confirmed or blocked, the domain is persisted to the global custom blacklist. Every server connected to the Turso database inherits immediate protection without waiting for public lists to update.",
+  },
+  {
+    q: "What happens in the case of a false positive?",
+    a: "Tsubaki provides multiple fail-safes. Moderators have an interactive <code>[Pardon User]</code> button right inside the alert embed to immediately restore the user, and an <code>[Allow URL]</code> button to whitelist legitimate domains. You can also test reported messages non-destructively using <code>/test &lt;message_id&gt;</code>.",
+  },
+  {
+    q: "Does Tsubaki ever download malicious attachments to the host machine?",
+    a: "Never. Tsubaki adheres to a strict zero-download security policy. It extracts attachment filenames, MIME types, and metadata in memory, and renders preview grids referencing Discord's CDN directly without touching host disk storage.",
+  },
+  {
+    q: "How does role hierarchy prevent moderator abuse?",
+    a: "Whenever a moderator clicks an action button in the alert embed (e.g. <code>Ban User</code>), Tsubaki computes the Discord role hierarchy between the moderator and the target. A lower-ranking moderator can never take action against an admin or higher-role member.",
+  },
+  {
+    q: "What are the hosting costs for running Tsubaki?",
+    a: "Tsubaki can be run 100% free. It is optimized to operate smoothly on the free tier of Render (supported by its lightweight <code>/health</code> endpoint), Turso's free 9GB libSQL database tier, and Groq's high-speed free tier for AI chat.",
+  },
+];
+---
+
+<section id="faq" class="py-24 relative overflow-hidden bg-[#07080C]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs font-mono font-semibold uppercase tracking-wider mb-4">
+        Frequently Asked Questions
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+        Clear answers for server admins
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-zinc-300">
+        Everything you need to know about security architecture, permissions, and threat quarantine.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="group rounded-2xl bg-[#0D0F17] border border-white/10 hover:border-white/20 transition-all overflow-hidden">
+          <summary class="p-6 cursor-pointer flex items-center justify-between text-left select-none text-white font-semibold text-base sm:text-lg group-open:text-rose-300 transition-colors">
+            <span class="pr-4">{faq.q}</span>
+            <ChevronDown class="w-5 h-5 text-zinc-400 group-open:rotate-180 group-open:text-rose-400 transition-transform duration-300 shrink-0" />
+          </summary>
+          <div
+            class="px-6 pb-6 pt-1 text-sm text-zinc-300 leading-relaxed border-t border-white/5 font-sans"
+            set:html={faq.a}
+          />
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

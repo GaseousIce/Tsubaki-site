@@ -1,0 +1,177 @@
+---
+import { Github, ExternalLink, ArrowUp } from "lucide-astro";
+---
+
+<footer class="bg-[#050609] border-t border-white/5 pt-16 pb-12 text-zinc-400 text-xs sm:text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/5">
+      <!-- Brand & Mission -->
+      <div class="md:col-span-5 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-rose-500 to-rose-700 p-0.5">
+            <div class="w-full h-full bg-[#0D0F17] rounded-[6px] flex items-center justify-center">
+              <img src="/favicon.svg" alt="Tsubaki Emblem" class="w-5 h-5" />
+            </div>
+          </div>
+          <span class="text-lg font-bold text-white tracking-tight">Tsubaki</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-500/10 text-rose-300 border border-rose-500/20">
+            v1.0.0
+          </span>
+        </div>
+        <p class="text-zinc-400 text-xs sm:text-sm max-w-sm leading-relaxed">
+          Compact Discord auto-moderation bot engineered for zero-day phishing interception,
+          decentralized blocklist synchronization, safe forensics, and community AI companion
+          engagement.
+        </p>
+        <div class="flex items-center gap-3 pt-2">
+          <a
+            href="https://github.com/GaseousIce/Tsubaki"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white transition-colors"
+            title="GitHub Repository"
+          >
+            <Github class="w-4 h-4" />
+          </a>
+          <span class="text-xs text-zinc-500 font-mono flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            MIT Open Source
+          </span>
+        </div>
+      </div>
+
+      <!-- Column 1: Core Navigation -->
+      <div class="md:col-span-2 space-y-3">
+        <div class="text-xs font-mono font-semibold uppercase tracking-wider text-white">
+          Platform
+        </div>
+        <ul class="space-y-2 text-xs">
+          <li>
+            <a href="#features" class="hover:text-rose-400 transition-colors">
+              Features
+            </a>
+          </li>
+          <li>
+            <a href="#defense-pipeline" class="hover:text-rose-400 transition-colors">
+              Defense Pipeline
+            </a>
+          </li>
+          <li>
+            <a href="#commands" class="hover:text-rose-400 transition-colors">
+              Slash Commands
+            </a>
+          </li>
+          <li>
+            <a href="#interactive-demo" class="hover:text-rose-400 transition-colors">
+              Live Sandbox
+            </a>
+          </li>
+          <li>
+            <a href="#deploy" class="hover:text-rose-400 transition-colors">
+              Self-Hosting
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Tech Stack -->
+      <div class="md:col-span-2 space-y-3">
+        <div class="text-xs font-mono font-semibold uppercase tracking-wider text-white">
+          Ecosystem
+        </div>
+        <ul class="space-y-2 text-xs">
+          <li>
+            <a
+              href="https://github.com/GaseousIce/Tsubaki"
+              target="_blank"
+              class="hover:text-rose-400 transition-colors flex items-center gap-1"
+            >
+              Discord.py <ExternalLink class="w-3 h-3" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://turso.tech"
+              target="_blank"
+              class="hover:text-rose-400 transition-colors flex items-center gap-1"
+            >
+              Turso libSQL <ExternalLink class="w-3 h-3" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://docs.astral.sh/uv/"
+              target="_blank"
+              class="hover:text-rose-400 transition-colors flex items-center gap-1"
+            >
+              Astral uv <ExternalLink class="w-3 h-3" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://groq.com"
+              target="_blank"
+              class="hover:text-rose-400 transition-colors flex items-center gap-1"
+            >
+              Groq LPUs <ExternalLink class="w-3 h-3" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://render.com"
+              target="_blank"
+              class="hover:text-rose-400 transition-colors flex items-center gap-1"
+            >
+              Render Cloud <ExternalLink class="w-3 h-3" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Author & Community -->
+      <div class="md:col-span-3 space-y-3">
+        <div class="text-xs font-mono font-semibold uppercase tracking-wider text-white">
+          Created By
+        </div>
+        <p class="text-xs text-zinc-400 leading-relaxed">
+          Developed by{" "}
+          <a
+            href="https://github.com/GaseousIce"
+            target="_blank"
+            class="text-rose-300 font-semibold hover:underline"
+          >
+            GaseousIce
+          </a>
+          . Free to inspect, fork, and self-host for any Discord server.
+        </p>
+        <div class="pt-2">
+          <a
+            href="https://github.com/GaseousIce/Tsubaki/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs text-zinc-300 hover:text-white inline-flex items-center gap-1.5 underline underline-offset-4 decoration-white/20 hover:decoration-rose-500"
+          >
+            <span>Report False Positive or Bug</span>
+            <ExternalLink class="w-3 h-3" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright & Back to Top -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 font-mono">
+      <div>&copy; {new Date().getFullYear()} Tsubaki. Open-source under MIT License.</div>
+      <div class="flex items-center gap-4">
+        <span>Protected by Turso &amp; Astral uv</span>
+        <a
+          href="#"
+          class="hover:text-rose-400 transition-colors flex items-center gap-1"
+          title="Back to top"
+        >
+          <span>Top</span>
+          <ArrowUp class="w-3.5 h-3.5" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tsubaki-50: #fff1f2;
+  --color-tsubaki-100: #ffe4e6;
+  --color-tsubaki-200: #fecdd3;
+  --color-tsubaki-300: #fda4af;
+  --color-tsubaki-400: #fb7185;
+  --color-tsubaki-500: #f43f5e;
+  --color-tsubaki-600: #e11d48;
+  --color-tsubaki-700: #be123c;
+  --color-tsubaki-800: #9f1239;
+  --color-tsubaki-900: #881337;
+  --color-tsubaki-950: #4c0519;
+
+  --color-obsidian-950: #06070a;
+  --color-obsidian-900: #0b0d12;
+  --color-obsidian-850: #11141c;
+  --color-obsidian-800: #161a24;
+  --color-obsidian-750: #1d2230;
+  --color-obsidian-700: #252b3d;
+
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Custom subtle glows and grid backgrounds */
+.bg-grid-subtle {
+  background-size: 32px 32px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-dots-subtle {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(244, 63, 94, 0.15) 1px, transparent 1px);
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0d12;
+}
+::-webkit-scrollbar-thumb {
+  background: #252b3d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e11d48;
+}
+
+/* Discord font helper */
+.font-discord {
+  font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

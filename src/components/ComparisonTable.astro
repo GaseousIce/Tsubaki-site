@@ -1,0 +1,205 @@
+---
+import { Check, X } from "lucide-astro";
+
+const features = [
+  {
+    feature: "Pre-spread threat interception (< 50ms)",
+    tsubaki: true,
+    automod: "Basic",
+    generic: false,
+    commercial: "Varies",
+  },
+  {
+    feature: "Deep embed inspection (titles, fields, footers)",
+    tsubaki: true,
+    automod: false,
+    generic: false,
+    commercial: "Paid Add-on",
+  },
+  {
+    feature: "Attachment descriptions & metadata scan",
+    tsubaki: true,
+    automod: false,
+    generic: false,
+    commercial: false,
+  },
+  {
+    feature: "Cross-channel link & duplicate screenshot raid limiter",
+    tsubaki: true,
+    automod: "Link only",
+    generic: false,
+    commercial: "Varies",
+  },
+  {
+    feature: "Decentralized community blocklist (Turso libSQL)",
+    tsubaki: true,
+    automod: false,
+    generic: false,
+    commercial: false,
+  },
+  {
+    feature: "Automated victim account recovery DM guide",
+    tsubaki: true,
+    automod: false,
+    generic: false,
+    commercial: false,
+  },
+  {
+    feature: "Safe code-block forensics (prevent accidental clicks)",
+    tsubaki: true,
+    automod: false,
+    generic: "Partial",
+    commercial: "Partial",
+  },
+  {
+    feature: "Proxied 4-image grid gallery without downloading files",
+    tsubaki: true,
+    automod: false,
+    generic: false,
+    commercial: false,
+  },
+  {
+    feature: "Role-hierarchy safety locks on mod overrides",
+    tsubaki: true,
+    automod: true,
+    generic: "Often Broken",
+    commercial: true,
+  },
+  {
+    feature: "Safe inspection sandbox command (/test)",
+    tsubaki: true,
+    automod: false,
+    generic: false,
+    commercial: false,
+  },
+  {
+    feature: "Built-in anime AI companion (/ask) via Groq",
+    tsubaki: true,
+    automod: false,
+    generic: false,
+    commercial: "$10+/mo",
+  },
+  {
+    feature: "100% Open Source, Self-Hostable, Zero Paywalls",
+    tsubaki: true,
+    automod: true,
+    generic: "Limited",
+    commercial: "$5–$30/mo",
+  },
+];
+---
+
+<section class="py-24 relative overflow-hidden bg-[#07080C]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs font-mono font-semibold uppercase tracking-wider mb-4">
+        Feature Breakdown
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+        Why server admins switch <br class="hidden sm:inline" />
+        to Tsubaki
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-zinc-300">
+        Compare Tsubaki's zero-day threat defense with standard Discord AutoMod and commercial
+        moderation bots.
+      </p>
+    </div>
+
+    <!-- Comparison Table Card -->
+    <div class="rounded-2xl bg-[#0D0F17] border border-white/10 shadow-2xl overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-white/10 bg-[#121520]">
+              <th class="py-5 px-6 text-sm font-bold text-zinc-300">Capability</th>
+              <th class="py-5 px-6 text-sm font-extrabold text-rose-400 bg-rose-950/20 border-x border-rose-500/20 min-w-[160px]">
+                <div class="flex items-center gap-2">
+                  <img src="/favicon.svg" alt="Tsubaki" class="w-5 h-5" />
+                  <span>Tsubaki</span>
+                </div>
+              </th>
+              <th class="py-5 px-6 text-xs font-semibold text-zinc-400 min-w-[140px]">
+                Discord AutoMod
+              </th>
+              <th class="py-5 px-6 text-xs font-semibold text-zinc-400 min-w-[140px]">
+                Generic Mod Bots
+              </th>
+              <th class="py-5 px-6 text-xs font-semibold text-zinc-400 min-w-[140px]">
+                Paid SaaS Bots
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-xs sm:text-sm">
+            {features.map((item) => (
+              <tr class="hover:bg-white/[0.02] transition-colors">
+                <td class="py-4 px-6 font-medium text-zinc-200">{item.feature}</td>
+
+                <!-- Tsubaki Column -->
+                <td class="py-4 px-6 bg-rose-950/15 border-x border-rose-500/20 font-semibold text-rose-300">
+                  <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 shrink-0">
+                      <Check class="w-3.5 h-3.5 stroke-[3]" />
+                    </div>
+                    <span>Included</span>
+                  </div>
+                </td>
+
+                <!-- Discord AutoMod -->
+                <td class="py-4 px-6 text-zinc-400">
+                  {item.automod === true ? (
+                    <div class="flex items-center gap-1.5 text-emerald-400">
+                      <Check class="w-4 h-4" />
+                      <span>Yes</span>
+                    </div>
+                  ) : item.automod === false ? (
+                    <div class="flex items-center gap-1.5 text-zinc-600">
+                      <X class="w-4 h-4" />
+                      <span>No</span>
+                    </div>
+                  ) : (
+                    <span class="text-zinc-400">{item.automod}</span>
+                  )}
+                </td>
+
+                <!-- Generic Mod Bots -->
+                <td class="py-4 px-6 text-zinc-400">
+                  {item.generic === true ? (
+                    <div class="flex items-center gap-1.5 text-emerald-400">
+                      <Check class="w-4 h-4" />
+                      <span>Yes</span>
+                    </div>
+                  ) : item.generic === false ? (
+                    <div class="flex items-center gap-1.5 text-zinc-600">
+                      <X class="w-4 h-4" />
+                      <span>No</span>
+                    </div>
+                  ) : (
+                    <span class="text-zinc-400">{item.generic}</span>
+                  )}
+                </td>
+
+                <!-- Paid SaaS Bots -->
+                <td class="py-4 px-6 text-zinc-400">
+                  {item.commercial === true ? (
+                    <div class="flex items-center gap-1.5 text-emerald-400">
+                      <Check class="w-4 h-4" />
+                      <span>Yes</span>
+                    </div>
+                  ) : item.commercial === false ? (
+                    <div class="flex items-center gap-1.5 text-zinc-600">
+                      <X class="w-4 h-4" />
+                      <span>No</span>
+                    </div>
+                  ) : (
+                    <span class="text-amber-300 font-medium">{item.commercial}</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
